@@ -29,3 +29,4 @@ page 5
 with each level indented by 2 spaces.
 
 
+**Then click on the boxes at the to traverse the tree and the title of your root to go back up the tree**
