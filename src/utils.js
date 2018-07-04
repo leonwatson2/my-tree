@@ -2,7 +2,7 @@ import { keyframes } from 'styled-components'
 
 const errors = {
   INVALID_SPACES:'INVALID_SPACES',
-  INVALID_INPUT:'INVALID_SPACES'
+  INVALID_INPUT:'INVALID_INPUT'
 }
 
 /**
