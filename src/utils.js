@@ -5,6 +5,19 @@ const errors = {
   INVALID_INPUT:'INVALID_INPUT'
 }
 
+ /**
+   * Counts the number of spcaes at the beginning of a line of text.
+   * @param text A line of text
+   */
+const countBeginningSpaces = function(text){
+    
+    const patt = new RegExp('^( *)')
+
+    const count = patt.exec(text) //?
+    
+    return count[1].length;
+};
+
 /**
 * Takes a block of text and parses it into a tree structure.
 * @param input Block of text 
@@ -22,27 +35,7 @@ function parseTree(input) {
           children: []
       }
   };
-  /**
-   * Counts the number of spcaes at the beginning of a line of text.
-   * @param text A line of text
-   */
-  const countBeginningSpaces = function(text){
-      const { count } = text.split('').reduce(({count, foundLetter}, letter) => {
-          if(letter === ' ' && !foundLetter) {
-              return {
-                  count: count + 1,
-                  foundLetter: false
-              }
-          } else if( letter !== ' ') {
-              return {
-                  count,
-                  foundLetter: true
-              }
-          }
-          return { count, foundLetter }
-      }, {count:0, foundLetter: false})
-      return count;
-  };
+ 
   /**
    * Throws an error for invalid inputs.
    * @param nodeText The line of text where the error occured.
